@@ -2,10 +2,10 @@
 #include <stdlib.h>
 #include <time.h>
 
-// Tamanho da matriz A
+/* Tamanho da matriz A */
 #define numLinhas_A 1000   // Número de linhas da matriz A
 #define numColunas_A 1000  // Número de colunas da matriz A
-// Tamanho da matriz B
+/* Tamanho da matriz B */
 #define numLinhas_B 1000   // Número de linhas da matriz B
 #define numColunas_B 1000  // Número de colunas da matriz B
 
