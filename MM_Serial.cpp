@@ -3,14 +3,11 @@
 #include <time.h>
 
 // Tamanho da matriz A
-#define numLinhas_A 100
-#define numColunas_A 100
+#define numLinhas_A 1000
+#define numColunas_A 1000
 // Tamanho da matriz B
-#define numLinhas_B 100
-#define numColunas_B 100
-// Tamanho da matriz C
-#define numLinhas_C 100
-#define numColunas_C 100
+#define numLinhas_B 1000
+#define numColunas_B 1000
 
 void iniciar_aleatorio(void);
 float aleatorio(int, int);
@@ -28,7 +25,7 @@ int main(int argc, char* argv[])
 
 	float A[numLinhas_A][numColunas_A],
 		B[numLinhas_B][numColunas_B],
-		C[numLinhas_C][numColunas_C];
+		C[numLinhas_A][numColunas_B];
 
 	/* Tamanho das matrizes A e B através dos argumentos de linha de comando (NÃO ESTOU CONSEGUINDO FAZER ASSIM)
 	printf("Leitura dos argumentos...\n");
@@ -141,12 +138,12 @@ float** alocarMatriz(int linhas, int colunas)
 
 	int i;
 
-	float** m = (float**)malloc(linhas * sizeof(float*)); //Aloca um vetor de ponteiros
+	float** m = (float**) malloc(linhas * sizeof(float*));
 
-	for (i = 0; i < linhas; i++) { // Percorre as linhas do vetor de ponteiros
-		m[i] = (float*)malloc(colunas * sizeof(float)); // Aloca um vetor de float para cada posição do vetor de ponteiros.
+	for (i = 0; i < linhas; i++) {
+		m[i] = (float*) malloc(colunas * sizeof(float));
 	}
-	return m; // Retorna o ponteiro para a matriz alocada
+	return m;
 }
 
 void liberaMatriz(float** m, int colunas)
