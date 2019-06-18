@@ -34,6 +34,9 @@ int    source    Processo de origem
 int    dest      Processo de destino
 """
 
+"""
+Definição da função f(x) a ser integrada
+"""
 def f(x):
     return 4/(1+x*x)
 
