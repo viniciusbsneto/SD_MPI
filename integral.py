@@ -1,9 +1,3 @@
-
-# coding: utf-8
-
-# In[ ]:
-
-
 """
 Nome: Vinícius Barreto de Sousa Neto
 
@@ -40,16 +34,8 @@ int    source    Processo de origem
 int    dest      Processo de destino
 """
 
-
-# In[ ]:
-
-
 def f(x):
     return 4/(1+x*x)
-
-
-# In[ ]:
-
 
 def trap(a, b, n, h):
 
@@ -63,10 +49,6 @@ def trap(a, b, n, h):
         
     return integral * h
 
-
-# In[ ]:
-
-
 from mpi4py import MPI
 
 comm = MPI.COMM_WORLD
@@ -79,24 +61,12 @@ n = 1024
 dest = 0
 total = -1.0
 
-
-# In[ ]:
-
-
 h = (b-a)/n
 local_n = n/p
-
-
-# In[ ]:
-
 
 local_a = a + my_rank * local_n * h
 local_b = local_a + local_n * h
 integral = trap(local_a, local_b, local_n, h)
-
-
-# In[ ]:
-
 
 if my_rank == 0:
     
@@ -117,4 +87,3 @@ if my_rank == 0:
     print("Integral no intervalo [",a,",", b, "] =", total, "\n")
     
 MPI.Finalize
-
